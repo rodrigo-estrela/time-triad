@@ -19,8 +19,3 @@ module.exports = (app) => {
     res.send(req.user);
   });
 };
-
-// mongodb+srv://rodrigoestrela:Rse.ckxc29@final-project-prod.0gwy5.mongodb.net/final-project-prod?retryWrites=true&w=majority
-
-// ClientID: 323395734845-fdikmt8k52o1fehu58o8h6uk8pa3h7tb.apps.googleusercontent.com
-// ClientSecret: QrNclhDG1AkzOJuip7Xb6j8x
