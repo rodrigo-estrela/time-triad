@@ -8,18 +8,25 @@ class Header extends React.Component {
     switch (this.props.auth) {
       case null:
         return;
+
       case false:
         return (
           <li>
             <a href="/auth/google">Login with Google</a>
           </li>
         );
+
       default:
-        return (
-          <li>
+        return [
+          <li key="1">
+            <Link className="btn" to="/quiz">
+              Questionário
+            </Link>
+          </li>,
+          <li key="2">
             <a href="/api/logout">Logout</a>
-          </li>
-        );
+          </li>,
+        ];
     }
   }
 
