@@ -13,7 +13,7 @@ module.exports = (app) => {
     passport.authenticate("google"),
     (req, res) => {
       if (req.user.timeTriad.done) {
-        res.redirect("/dashborad");
+        res.redirect("/dashboard");
       }
 
       res.redirect("/quiz");
