@@ -1,5 +1,5 @@
-import React from "react";
-import { Field } from "redux-form";
+import React from 'react';
+import { Field } from 'redux-form';
 
 const Question = (props) => {
   const { question } = props;
@@ -16,12 +16,12 @@ const Question = (props) => {
 
 const renderField = ({ input, label, meta: { touched, error } }) => {
   return (
-    <li className="collection-item valign-wrapper">
+    <li className="collection-item">
       <div className="row">
         <div className="col s12 m8 l9">
           <label htmlFor={input.name}>{label}</label>
         </div>
-        <div className="browser-default col s12 m4 l3">
+        <div className="col s12 m4 l3">
           <select {...input} className="browser-default z-depth-1">
             <option />
             <option value="1">Nunca</option>
@@ -37,6 +37,6 @@ const renderField = ({ input, label, meta: { touched, error } }) => {
   );
 };
 
-const required = (value) => (value ? undefined : "Preenchimento Obrigatório!");
+const required = (value) => (value ? undefined : 'Preenchimento Obrigatório!');
 
 export default Question;

@@ -1,8 +1,8 @@
-import React from "react";
-import { connect } from "react-redux";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
-import Dropdown from "./Dropdown";
+import Dropdown from './Dropdown';
 
 class Header extends React.Component {
   constructor() {
@@ -11,7 +11,7 @@ class Header extends React.Component {
   }
 
   componentDidMount() {
-    var elems = document.querySelectorAll(".sidenav");
+    var elems = document.querySelectorAll('.sidenav');
     var instances = this.M.Sidenav.init(elems);
   }
 
@@ -31,7 +31,7 @@ class Header extends React.Component {
 
       default:
         const menus = [];
-        if (this.props.auth.role === "admin") {
+        if (this.props.auth.role === 'admin') {
           menus.push(
             <li key="1">
               <Link to="/addQuestion">Admin</Link>
@@ -59,14 +59,10 @@ class Header extends React.Component {
       case null:
         return;
       case false:
-        return (
-          <li>
-            <a href="/auth/google">Login com Google</a>
-          </li>
-        );
+        return;
       default:
         const menus = [];
-        if (this.props.auth.role === "admin") {
+        if (this.props.auth.role === 'admin') {
           menus.push(
             <li key="1">
               <Link to="/addQuestion">Admin</Link>
@@ -105,19 +101,19 @@ class Header extends React.Component {
             <a href="#" data-target="mobile-demo" className="sidenav-trigger">
               <i class="material-icons">menu</i>
             </a>
-            <ul className="right hide-on-med-and-down">
-              {this.renderContent()}
-            </ul>
-
-            <ul className="right show-on-med-and-down">
+            <ul className="right">
               <li>
                 <a
                   className="btn-small"
-                  href={this.props.auth ? "/api/logout" : "/auth/google"}
+                  href={this.props.auth ? '/api/logout' : '/auth/google'}
                 >
-                  {this.props.auth ? "Logout" : "Login com Google"}
+                  {this.props.auth ? 'Logout' : 'Login com Google'}
                 </a>
               </li>
+            </ul>
+
+            <ul className="right hide-on-med-and-down">
+              {this.renderSideNav()}
             </ul>
           </div>
         </nav>
