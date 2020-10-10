@@ -2,9 +2,10 @@ import React from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 
+import Dropdown from "./Dropdown";
+
 class Header extends React.Component {
   renderContent() {
-    console.log(this.props.auth);
     switch (this.props.auth) {
       case null:
         return;
@@ -19,11 +20,12 @@ class Header extends React.Component {
       default:
         return [
           <li key="1">
-            <Link className="btn" to="/quiz">
-              Questionário
-            </Link>
+            <Link to="/addQuestion">Admin</Link>
           </li>,
           <li key="2">
+            <Dropdown />
+          </li>,
+          <li key="3">
             <a href="/api/logout">Logout</a>
           </li>,
         ];
@@ -32,13 +34,14 @@ class Header extends React.Component {
 
   render() {
     return (
-      <nav>
+      <nav className="purple darken-4">
         <div className="nav-wrapper">
           <Link
-            to={this.props.auth ? "/surveys" : "/"}
+            to={this.props.auth ? "/dashboard" : "/"}
             className="left brand-logo"
           >
-            Tríade do Tempo
+            <i className="large material-icons">star_border</i>
+            MJE Coach
           </Link>
           <ul className="right">{this.renderContent()}</ul>
         </div>

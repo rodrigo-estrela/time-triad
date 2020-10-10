@@ -11,6 +11,7 @@ module.exports = {
   async store(req, res) {
     console.log(req.body);
     const question = await new Question({
+      id: req.body.id,
       group: req.body.group,
       description: req.body.description,
     }).save();

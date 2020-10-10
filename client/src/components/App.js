@@ -1,12 +1,14 @@
 import React from "react";
-import { BrowserRouter, Route } from "react-router-dom";
+import { Router, Route } from "react-router-dom";
 import { connect } from "react-redux";
 import * as actions from "../actions";
+import history from "../history";
 
 import Header from "./Header";
-import Quiz from "./Quiz";
-const Dashboard = () => <h2>Something great is coming!</h2>;
-const SurveyNew = () => <h2>SurveyNew</h2>;
+import QuizForm from "./Quiz/QuizForm";
+import Question from "./Question";
+import Dashboard from "./Dashboard";
+
 const Landing = () => <h2>Landing</h2>;
 
 class App extends React.Component {
@@ -17,15 +19,19 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <BrowserRouter>
+        <Router history={history}>
           <div>
             <Header />
             <Route exact path="/" component={Landing} />
-            <Route exact path="/surveys" component={Dashboard} />
-            <Route exact path="/surveys/new" component={SurveyNew} />
-            <Route exact path="/quiz" component={Quiz} />
+            <Route exact path="/dashboard" component={Dashboard} />
+            <Route
+              exact
+              path="/quiz"
+              render={(props) => <QuizForm {...props} form="quiz" />}
+            />
+            <Route exact path="/addQuestion" component={Question} />
           </div>
-        </BrowserRouter>
+        </Router>
       </div>
     );
   }

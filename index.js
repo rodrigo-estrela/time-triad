@@ -6,12 +6,15 @@ const bodyParser = require("body-parser");
 const keys = require("./config/keys");
 
 require("./models/User");
-require("./models/Answer");
+require("./models/Quiz");
 require("./models/Question");
 
 require("./services/passport");
 
-mongoose.connect(keys.mongoURI);
+mongoose.connect(keys.mongoURI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 
 const app = express();
 app.use(bodyParser.json());
