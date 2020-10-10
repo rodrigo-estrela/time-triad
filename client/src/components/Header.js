@@ -54,11 +54,14 @@ class Header extends React.Component {
     }
   }
 
-  renderSideNav() {
+  renderNavItems(sideNav = false) {
     switch (this.props.auth) {
       case null:
         return;
       case false:
+        if (sideNav) {
+          return <div className="">Faça o Login para visualizar as opções</div>;
+        }
         return;
       default:
         const menus = [];
@@ -113,13 +116,13 @@ class Header extends React.Component {
             </ul>
 
             <ul className="right hide-on-med-and-down">
-              {this.renderSideNav()}
+              {this.renderNavItems()}
             </ul>
           </div>
         </nav>
 
         <ul class="sidenav" id="mobile-demo">
-          {this.renderSideNav()}
+          {this.renderNavItems(true)}
         </ul>
       </div>
     );

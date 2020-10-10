@@ -1,7 +1,7 @@
-import React from "react";
-import { connect } from "react-redux";
+import React from 'react';
+import { connect } from 'react-redux';
 
-import QuizForm from "./QuizForm";
+import QuizForm from './QuizForm';
 
 class QuizResult extends React.Component {
   constructor() {
@@ -10,7 +10,7 @@ class QuizResult extends React.Component {
   }
 
   componentDidMount() {
-    const elems = document.querySelectorAll(".collapsible");
+    const elems = document.querySelectorAll('.collapsible');
     const instances = this.M.Collapsible.init(elems);
   }
 
@@ -22,7 +22,7 @@ class QuizResult extends React.Component {
         <li>
           <div className="collapsible-header valign-wrapper teal lighten-5">
             <i className="material-icons">arrow_drop_down_circle</i>
-            <h5>Esfera Importante: {importante}%</h5>
+            <h6>Esfera Importante: {importante}%</h6>
           </div>
           <div className="collapsible-body">
             <QuizForm
@@ -42,7 +42,7 @@ class QuizResult extends React.Component {
         <li>
           <div className="collapsible-header valign-wrapper lime lighten-5">
             <i class="material-icons">arrow_drop_down_circle</i>
-            <h5>Esfera Urgente: {urgente}%</h5>
+            <h6>Esfera Urgente: {urgente}%</h6>
           </div>
           <div className="collapsible-body">
             <QuizForm
@@ -62,7 +62,7 @@ class QuizResult extends React.Component {
         <li>
           <div className="collapsible-header valign-wrapper red lighten-5">
             <i class="material-icons">arrow_drop_down_circle</i>
-            <h5>Esfera Circunstancial: {circunstancial}%</h5>
+            <h6>Esfera Circunstancial: {circunstancial}%</h6>
           </div>
           <div className="collapsible-body">
             <QuizForm
