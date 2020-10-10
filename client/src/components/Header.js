@@ -18,17 +18,27 @@ class Header extends React.Component {
         );
 
       default:
-        return [
-          <li key="1">
-            <Link to="/addQuestion">Admin</Link>
-          </li>,
+        const menus = [];
+        if (this.props.auth.role === "admin") {
+          menus.push(
+            <li key="1">
+              <Link to="/addQuestion">Admin</Link>
+            </li>
+          );
+        }
+
+        menus.push(
           <li key="2">
             <Dropdown />
-          </li>,
+          </li>
+        );
+
+        menus.push(
           <li key="3">
             <a href="/api/logout">Logout</a>
-          </li>,
-        ];
+          </li>
+        );
+        return menus;
     }
   }
 

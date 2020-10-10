@@ -31,10 +31,6 @@ class Dropdown extends React.Component {
           <li>
             <Link to="/quiz">Triade do Tempo</Link>
           </li>
-          <li className="divider"></li>
-          <li>
-            <Link to="/dashboard">Resultado Tríade do Tempo</Link>
-          </li>
         </ul>
       </div>
     );
