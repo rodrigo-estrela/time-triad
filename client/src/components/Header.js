@@ -13,7 +13,9 @@ class Header extends React.Component {
       case false:
         return (
           <li>
-            <a href="/auth/google">Login with Google</a>
+            <a className="btn" href="/auth/google">
+              Login com Google
+            </a>
           </li>
         );
 
@@ -46,10 +48,7 @@ class Header extends React.Component {
     return (
       <nav className="purple darken-4">
         <div className="nav-wrapper">
-          <Link
-            to={this.props.auth ? "/dashboard" : "/"}
-            className="left brand-logo"
-          >
+          <Link to="/" className="left brand-logo">
             <i className="large material-icons">star_border</i>
             MJE Coach
           </Link>

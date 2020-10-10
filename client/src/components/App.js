@@ -8,8 +8,7 @@ import Header from "./Header";
 import QuizForm from "./Quiz/QuizForm";
 import Question from "./Question";
 import Dashboard from "./Dashboard";
-
-const Landing = () => <h2>Landing</h2>;
+import Landing from "./Landing";
 
 class App extends React.Component {
   componentDidMount() {
