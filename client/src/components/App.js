@@ -9,6 +9,7 @@ import QuizForm from "./Quiz/QuizForm";
 import Question from "./Question";
 import Dashboard from "./Dashboard";
 import Landing from "./Landing";
+import User from "./User";
 
 class App extends React.Component {
   componentDidMount() {
@@ -29,6 +30,7 @@ class App extends React.Component {
               render={(props) => <QuizForm {...props} form="quiz" />}
             />
             <Route exact path="/addQuestion" component={Question} />
+            <Route exact path="/users" component={User} />
           </div>
         </Router>
       </div>

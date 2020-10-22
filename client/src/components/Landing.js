@@ -1,7 +1,5 @@
 import React from "react";
 
-import Card from "./Card";
-
 const text = {
   importante:
     "Está diretamente relacionada às atividades que nós realizamos e que são relevantes em nossas vidas. Que trazem resultados em curto, médio ou longo prazo. Em geral, as coisas importantes têm prazos de execução, porém nunca são urgentes. As atividades importantes proporcionam prazer ao serem executadas, sendo que a maioria delas é espontânea.",

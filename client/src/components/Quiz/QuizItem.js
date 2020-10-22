@@ -19,7 +19,9 @@ const renderField = ({ input, label, meta: { touched, error } }) => {
     <li className="collection-item">
       <div className="row">
         <div className="col s12 m8 l9">
-          <label htmlFor={input.name}>{label}</label>
+          <p htmlFor={input.name}>
+            {label}
+          </p>
         </div>
         <div className="col s12 m4 l3">
           <select {...input} className="browser-default z-depth-1">

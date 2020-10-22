@@ -34,7 +34,7 @@ class Header extends React.Component {
         if (this.props.auth.role === 'admin') {
           menus.push(
             <li key="1">
-              <Link to="/addQuestion">Admin</Link>
+              <Link to="/users">Admin</Link>
             </li>
           );
         }
@@ -68,7 +68,7 @@ class Header extends React.Component {
         if (this.props.auth.role === 'admin') {
           menus.push(
             <li key="1">
-              <Link to="/addQuestion">Admin</Link>
+              <Link to="/users">Admin</Link>
             </li>
           );
         }
@@ -102,7 +102,7 @@ class Header extends React.Component {
               MJE Coach
             </Link>
             <a href="#" data-target="mobile-demo" className="sidenav-trigger">
-              <i class="material-icons">menu</i>
+              <i className="material-icons">menu</i>
             </a>
             <ul className="right">
               <li>
@@ -121,7 +121,7 @@ class Header extends React.Component {
           </div>
         </nav>
 
-        <ul class="sidenav" id="mobile-demo">
+        <ul className="sidenav" id="mobile-demo">
           {this.renderNavItems(true)}
         </ul>
       </div>

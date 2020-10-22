@@ -24,7 +24,7 @@ class QuizResult extends React.Component {
             <i className="material-icons">arrow_drop_down_circle</i>
             <h6>Esfera Importante: {importante}%</h6>
           </div>
-          <div className="collapsible-body">
+          <div className="collapsible-body white">
             <QuizForm
               group="importante"
               form="importante"
@@ -44,7 +44,7 @@ class QuizResult extends React.Component {
             <i class="material-icons">arrow_drop_down_circle</i>
             <h6>Esfera Urgente: {urgente}%</h6>
           </div>
-          <div className="collapsible-body">
+          <div className="collapsible-body white">
             <QuizForm
               group="urgente"
               form="urgente"
@@ -64,7 +64,7 @@ class QuizResult extends React.Component {
             <i class="material-icons">arrow_drop_down_circle</i>
             <h6>Esfera Circunstancial: {circunstancial}%</h6>
           </div>
-          <div className="collapsible-body">
+          <div className="collapsible-body white">
             <QuizForm
               group="circunstancial"
               form="circunstancial"

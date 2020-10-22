@@ -33,6 +33,9 @@ const timeTriadSchema = new Schema({
 
 const userSchema = new Schema({
   googleId: String,
+  name: String,
+  email: String,
+  picture: String,
   role: { type: String, default: "user" },
   timeTriad: { type: timeTriadSchema, default: {} },
 });
