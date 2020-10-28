@@ -1,11 +1,11 @@
-const mongoose = require("mongoose");
-const Question = mongoose.model("questions");
+const mongoose = require('mongoose');
+const Question = mongoose.model('questions');
 
 module.exports = {
   async index(req, res) {
     const questions = await Question.find();
 
-    res.send(questions);
+    res.status(200).send(questions);
   },
 
   async store(req, res) {

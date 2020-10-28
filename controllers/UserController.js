@@ -6,19 +6,19 @@ module.exports = {
   async index(req, res) {
     const users = await User.find();
 
-    return res.send(renderUsers(users));
-  }
-}
+    return res.status(200).send(renderUsers(users));
+  },
+};
 
 function renderUsers(users) {
-  return users.map(user => {
+  return users.map((user) => {
     return {
       name: user.name,
       email: user.email,
       picture: user.picture,
       importante: user.timeTriad.importante,
       urgente: user.timeTriad.urgente,
-      circunstancial: user.timeTriad.circunstancial
-    }
-  })
+      circunstancial: user.timeTriad.circunstancial,
+    };
+  });
 }

@@ -1,5 +1,5 @@
-const mongoose = require("mongoose");
-const User = mongoose.model("users");
+const mongoose = require('mongoose');
+const User = mongoose.model('users');
 
 module.exports = {
   async store(req, res) {
@@ -9,11 +9,11 @@ module.exports = {
       user.timeTriad.quiz[key] = req.body[key];
     }
 
-    console.log("quiz answers from dashboard");
+    console.log('quiz answers from dashboard');
     console.log(req.body);
-    const importante = parseCategories(user.timeTriad.quiz, "i");
-    const urgente = parseCategories(user.timeTriad.quiz, "u");
-    const circunstancial = parseCategories(user.timeTriad.quiz, "c");
+    const importante = parseCategories(user.timeTriad.quiz, 'i');
+    const urgente = parseCategories(user.timeTriad.quiz, 'u');
+    const circunstancial = parseCategories(user.timeTriad.quiz, 'c');
 
     const total = importante + urgente + circunstancial;
 
@@ -24,7 +24,7 @@ module.exports = {
     user.timeTriad.model = computeModel(user.timeTriad);
 
     const response = await user.save();
-    res.send(response);
+    res.status(200).send(response);
   },
 };
 
@@ -39,16 +39,16 @@ function parseCategories(quiz, categorie) {
 
 function computeModel({ importante, urgente, circunstancial }) {
   if (urgente > importante && urgente > circunstancial) {
-    return "Super-man";
+    return 'Super-man';
   }
 
   if (circunstancial > importante && circunstancial > urgente) {
-    return "Homer Simpson";
+    return 'Homer Simpson';
   }
 
   if (importante > urgente && urgente > circunstancial) {
-    return "Ideal";
+    return 'Ideal';
   }
 
-  return "Equilibrista";
+  return 'Equilibrista';
 }
