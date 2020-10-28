@@ -1,25 +1,43 @@
-import React from "react";
-import { connect } from "react-redux";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
-import QuizResult from "./Quiz/QuizResult";
-import Loading from "./Loading";
+import Header from './Header';
+import QuizResult from './quiz-items/QuizResult';
+import Loading from './Loading';
 
 class Dashboard extends React.Component {
   render() {
     if (this.props.auth) {
       if (this.props.auth.timeTriad.done) {
-        return <QuizResult />;
+        return (
+          <div className="">
+            <Header />
+
+            <div className="container">
+              <QuizResult />
+            </div>
+          </div>
+        );
       }
 
       return (
-        <div className="">
-          <Link to="/quiz">Clique Aqui para responder ao questionário</Link>
+        <div>
+          <Header />
+
+          <div className="container">
+            <Link to="/quiz">Clique Aqui para responder ao questionário</Link>
+          </div>
         </div>
       );
     }
 
-    return <Loading />;
+    return (
+      <div>
+        <Header />
+        <Loading />
+      </div>
+    );
   }
 }
 

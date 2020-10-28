@@ -33,6 +33,7 @@ const timeTriadSchema = new Schema({
 
 const userSchema = new Schema({
   googleId: String,
+  facebookId: String,
   name: String,
   email: String,
   picture: String,

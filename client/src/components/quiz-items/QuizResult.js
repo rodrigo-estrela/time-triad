@@ -22,10 +22,11 @@ class QuizResult extends React.Component {
         <li>
           <div className="collapsible-header valign-wrapper teal lighten-5">
             <i className="material-icons">arrow_drop_down_circle</i>
-            <h6>Esfera Importante: {importante}%</h6>
+            <h6>Important domain: {importante}%</h6>
           </div>
           <div className="collapsible-body white">
             <QuizForm
+              showHeader={false}
               group="importante"
               form="importante"
               initialValues={{
@@ -42,10 +43,11 @@ class QuizResult extends React.Component {
         <li>
           <div className="collapsible-header valign-wrapper lime lighten-5">
             <i class="material-icons">arrow_drop_down_circle</i>
-            <h6>Esfera Urgente: {urgente}%</h6>
+            <h6>Urgent Domain: {urgente}%</h6>
           </div>
           <div className="collapsible-body white">
             <QuizForm
+              showHeader={false}
               group="urgente"
               form="urgente"
               initialValues={{
@@ -62,10 +64,11 @@ class QuizResult extends React.Component {
         <li>
           <div className="collapsible-header valign-wrapper red lighten-5">
             <i class="material-icons">arrow_drop_down_circle</i>
-            <h6>Esfera Circunstancial: {circunstancial}%</h6>
+            <h6>Circunstantial Domain: {circunstancial}%</h6>
           </div>
           <div className="collapsible-body white">
             <QuizForm
+              showHeader={false}
               group="circunstancial"
               form="circunstancial"
               initialValues={{
