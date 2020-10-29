@@ -47,7 +47,8 @@ passport.use(
     {
       clientID: keys.facebookClientID,
       clientSecret: keys.facebookClientSecret,
-      callbackURL: 'https://intense-headland-82101.herokuapp.com/',
+      callbackURL: '/auth/facebook/callback',
+      proxy: true,
       profileFields: ['id', 'displayName', 'photos', 'email'],
     },
     async (accessToken, refreshToken, profile, done) => {
