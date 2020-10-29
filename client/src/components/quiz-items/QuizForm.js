@@ -27,26 +27,24 @@ class QuizForm extends React.Component {
   };
 
   render() {
-    const { handleSubmit, showHeader } = this.props;
+    const { handleSubmit } = this.props;
     return (
-      <div>
-        <form onSubmit={handleSubmit(this.props.postQuiz)} className="">
-          <div className="row">
-            <ul className="collection">{this.renderContent()}</ul>
-          </div>
+      <form onSubmit={handleSubmit(this.props.postQuiz)} className="">
+        <div className="row">
+          <ul className="collection">{this.renderContent()}</ul>
+        </div>
 
-          <div className="row">
-            <button
-              className="btn waves-effect waves-light right"
-              type="submit"
-              name="action"
-            >
-              Submit
-              <i className="material-icons right">send</i>
-            </button>
-          </div>
-        </form>
-      </div>
+        <div className="row">
+          <button
+            className="btn waves-effect waves-light right"
+            type="submit"
+            name="action"
+          >
+            Submit
+            <i className="material-icons right">send</i>
+          </button>
+        </div>
+      </form>
     );
   }
 }
@@ -57,4 +55,6 @@ function mapStateToProps({ auth, quiz }) {
 
 QuizForm = connect(mapStateToProps, actions)(QuizForm);
 
-export default reduxForm()(QuizForm);
+export default reduxForm({
+  form: 'quiz',
+})(QuizForm);

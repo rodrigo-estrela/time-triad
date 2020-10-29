@@ -55,28 +55,24 @@ class Header extends React.Component {
 
   render() {
     return (
-      <div className="navbar-fixed z-depth-1">
+      <div className="">
         <nav className="grey darken-4">
-          <div className="container">
-            <div className="nav-wrapper">
-              <Link to="#" className="left brand-logo hide-on-med-and-down">
-                MJE Coach
-              </Link>
-              <a href="#" data-target="mobile-demo" className="sidenav-trigger">
-                <i className="material-icons">menu</i>
-              </a>
-              <ul className="right">
-                <li>
-                  <a href="/api/logout">
-                    {this.props.auth ? 'Logout' : 'Login'}
-                  </a>
-                </li>
-              </ul>
+          <div className="nav-wrapper">
+            <Link to="#" className="left brand-logo hide-on-med-and-down">
+              MJE Coach
+            </Link>
+            <a href="#" data-target="mobile-demo" className="sidenav-trigger">
+              <i className="material-icons">menu</i>
+            </a>
+            <ul className="right">
+              <li>
+                <a href="/api/logout">{this.props.auth ? 'Logout' : 'Login'}</a>
+              </li>
+            </ul>
 
-              <ul className="right hide-on-med-and-down">
-                {this.renderNavItems()}
-              </ul>
-            </div>
+            <ul className="right hide-on-med-and-down">
+              {this.renderNavItems()}
+            </ul>
           </div>
         </nav>
 
