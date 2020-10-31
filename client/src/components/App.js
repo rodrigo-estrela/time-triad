@@ -18,10 +18,6 @@ class App extends React.Component {
   }
 
   render() {
-    // if (!this.props.auth) {
-    //   return <Landing />;
-    // }
-
     return (
       <div>
         <Router history={history}>

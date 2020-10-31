@@ -42,7 +42,7 @@ class QuizResult extends React.Component {
         </li>
         <li>
           <div className="collapsible-header valign-wrapper lime lighten-5">
-            <i class="material-icons">arrow_drop_down_circle</i>
+            <i className="material-icons">arrow_drop_down_circle</i>
             <h6>Urgent Domain: {urgente}%</h6>
           </div>
           <div className="collapsible-body white">
