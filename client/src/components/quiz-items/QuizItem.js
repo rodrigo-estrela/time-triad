@@ -24,11 +24,11 @@ const renderField = ({ input, label, meta: { touched, error } }) => {
         <div className="col s12 m4 l3">
           <select {...input} className="browser-default z-depth-1">
             <option />
-            <option value="1">Nunca</option>
-            <option value="2">Raramente</option>
-            <option value="3">As vezes</option>
-            <option value="4">Quase sempre</option>
-            <option value="5">Sempre</option>
+            <option value="1">Never</option>
+            <option value="2">Rarely</option>
+            <option value="3">Sometimes</option>
+            <option value="4">Often</option>
+            <option value="5">Always</option>
           </select>
           {touched && error && <span>{error}</span>}
         </div>

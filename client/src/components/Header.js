@@ -46,7 +46,7 @@ class Header extends React.Component {
         );
         menus.push(
           <li key="4">
-            <Link to="/">Concept</Link>
+            <Link to="/concept">Concept</Link>
           </li>
         );
         return menus;

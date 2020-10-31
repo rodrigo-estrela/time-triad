@@ -4,11 +4,14 @@ import { connect } from 'react-redux';
 import * as actions from '../actions';
 import history from '../history';
 
+import PrivateRoute from './PrivateRoute';
 import Quiz from './Quiz';
 import Question from './Question';
 import Dashboard from './Dashboard';
 import Landing from './Landing';
 import Admin from './Admin';
+import Concept from './Concept';
+import Loading from './Loading';
 
 class App extends React.Component {
   componentDidMount() {
@@ -16,6 +19,10 @@ class App extends React.Component {
   }
 
   render() {
+    // if (!this.props.auth) {
+    //   return <Landing />;
+    // }
+
     return (
       <div>
         <Router history={history}>
@@ -29,6 +36,7 @@ class App extends React.Component {
             />
             <Route exact path="/addQuestion" component={Question} />
             <Route exact path="/admin" component={Admin} />
+            <Route exact path="/concept" component={Concept} />
           </div>
         </Router>
       </div>
@@ -36,4 +44,8 @@ class App extends React.Component {
   }
 }
 
-export default connect(null, actions)(App);
+function mapStateToProps({ auth }) {
+  return { auth };
+}
+
+export default connect(mapStateToProps, actions)(App);
