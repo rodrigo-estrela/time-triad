@@ -38,7 +38,7 @@ function parseCategories(quiz, categorie) {
 }
 
 function computeModel({ importante, urgente, circunstancial }) {
-  if (urgente > importante && urgente > circunstancial) {
+  if (urgente > importante && circunstancial > importante) {
     return 'Super-man';
   }
 
@@ -46,9 +46,9 @@ function computeModel({ importante, urgente, circunstancial }) {
     return 'Homer Simpson';
   }
 
-  if (importante > urgente && urgente > circunstancial) {
+  if (importante >= 80 && urgente > circunstancial) {
     return 'Ideal';
   }
 
-  return 'Equilibrista';
+  return 'Tightrope walker';
 }

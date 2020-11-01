@@ -9,6 +9,7 @@ function Quiz() {
       <Header />
 
       <div className="container">
+        <p>Please, answer the questions bellow to get your time triad</p>
         <QuizForm />
       </div>
     </div>
