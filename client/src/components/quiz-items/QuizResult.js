@@ -11,7 +11,7 @@ class QuizResult extends React.Component {
 
   componentDidMount() {
     const elems = document.querySelectorAll('.collapsible');
-    const instances = this.M.Collapsible.init(elems);
+    this.M.Collapsible.init(elems);
   }
 
   render() {

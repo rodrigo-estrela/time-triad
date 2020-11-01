@@ -10,7 +10,7 @@ class Header extends React.Component {
 
   componentDidMount() {
     var elems = document.querySelectorAll('.sidenav');
-    var instances = this.M.Sidenav.init(elems);
+    this.M.Sidenav.init(elems);
   }
 
   renderNavItems(sideNav = false) {
@@ -57,22 +57,29 @@ class Header extends React.Component {
     return (
       <div className="">
         <nav className="grey darken-4">
-          <div className="nav-wrapper">
-            <Link to="#" className="left brand-logo hide-on-med-and-down">
-              MJE Coach
-            </Link>
-            <a href="#" data-target="mobile-demo" className="sidenav-trigger">
-              <i className="material-icons">menu</i>
-            </a>
-            <ul className="right">
-              <li>
-                <a href="/api/logout">{this.props.auth ? 'Logout' : 'Login'}</a>
-              </li>
-            </ul>
+          <div className="container">
+            <div className="nav-wrapper">
+              <Link
+                to="/dashboard"
+                className="left brand-logo hide-on-med-and-down"
+              >
+                MJE Coach
+              </Link>
+              <a href="#" data-target="mobile-demo" className="sidenav-trigger">
+                <i className="material-icons">menu</i>
+              </a>
+              <ul className="right">
+                <li>
+                  <a href="/api/logout">
+                    {this.props.auth ? 'Logout' : 'Login'}
+                  </a>
+                </li>
+              </ul>
 
-            <ul className="right hide-on-med-and-down">
-              {this.renderNavItems()}
-            </ul>
+              <ul className="right hide-on-med-and-down">
+                {this.renderNavItems()}
+              </ul>
+            </div>
           </div>
         </nav>
 

@@ -15,6 +15,9 @@ class Dashboard extends React.Component {
             <Header />
 
             <div className="container">
+              <h5 className="teal-text center-align">
+                Model: {this.props.auth.timeTriad.model}
+              </h5>
               <QuizResult />
             </div>
           </div>

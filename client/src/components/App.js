@@ -10,7 +10,6 @@ import Dashboard from './Dashboard';
 import Landing from './Landing';
 import Admin from './Admin';
 import Concept from './Concept';
-import Loading from './Loading';
 
 class App extends React.Component {
   componentDidMount() {

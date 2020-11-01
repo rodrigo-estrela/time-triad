@@ -37,7 +37,10 @@ class Admin extends React.Component {
                   <img src={user.picture} alt="usuario" className="circle" />
                   <p>{user.name}</p>
                   <p>{user.email}</p>
-                  <div className="secondary-content">{user.result}</div>
+                  {user.quizStatus && <p className="teal-text">{user.model}</p>}
+                  {user.quizStatus && (
+                    <p className="teal-text">{user.result}</p>
+                  )}
                 </li>
               );
             })}

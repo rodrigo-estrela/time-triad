@@ -24,7 +24,7 @@ module.exports = {
     user.timeTriad.model = computeModel(user.timeTriad);
 
     const response = await user.save();
-    res.status(200).send(response);
+    return res.status(200).send(response);
   },
 };
 
@@ -46,7 +46,7 @@ function computeModel({ importante, urgente, circunstancial }) {
     return 'Homer Simpson';
   }
 
-  if (importante >= 80 && urgente > circunstancial) {
+  if (importante >= urgente && urgente > circunstancial) {
     return 'Ideal';
   }
 

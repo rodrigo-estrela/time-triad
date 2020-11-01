@@ -5,7 +5,7 @@ module.exports = {
   async index(req, res) {
     const questions = await Question.find();
 
-    res.status(200).send(questions);
+    return res.status(200).send(questions);
   },
 
   async store(req, res) {
@@ -15,7 +15,7 @@ module.exports = {
       group: req.body.group,
       description: req.body.description,
     }).save();
-    console.log(question);
-    res.status(200).send(question);
+
+    return res.status(200).send(question);
   },
 };
